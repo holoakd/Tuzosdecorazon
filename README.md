@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,82 +12,119 @@
 
 <style>
 
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#071b35;
-color:white;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #071b35;
+    color: white;
 }
 
-header{
-background:#001b3a;
-text-align:center;
-padding:25px;
+header {
+    background: #001b3a;
+    text-align: center;
+    padding: 25px;
+    border-bottom: 3px solid #39a9ff;
 }
 
-h1{
-margin:0;
-font-size:32px;
+header h1 {
+    margin: 0;
+    font-size: 32px;
 }
 
-.menu{
-display:flex;
-overflow:auto;
-background:#031329;
-padding:10px;
-gap:8px;
+.menu {
+    background: #031329;
+    padding: 10px;
+    text-align: center;
+    overflow-x: auto;
 }
 
-.menu button{
-background:#17436d;
-color:white;
-border:0;
-border-radius:10px;
-padding:12px;
-font-weight:bold;
+.menu button {
+    background: #17436d;
+    color: white;
+    border: 0;
+    padding: 11px;
+    margin: 3px;
+    border-radius: 8px;
+    font-weight: bold;
 }
 
-.seccion{
-display:none;
-padding:20px;
-max-width:600px;
-margin:auto;
+.seccion {
+    display: none;
+    max-width: 650px;
+    margin: auto;
+    padding: 20px;
 }
 
-.activa{
-display:block;
+.activa {
+    display: block;
 }
 
-.card{
-background:#102b4d;
-padding:18px;
-margin:15px 0;
-border-radius:15px;
+.card {
+    background: #102b4d;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 14px;
 }
 
-.jugador{
-background:#17436d;
-padding:12px;
-margin:7px 0;
-border-radius:9px;
+.jugador {
+    background: #17436d;
+    padding: 12px;
+    margin: 7px 0;
+    border-radius: 8px;
 }
 
-.numero{
-font-size:30px;
-font-weight:bold;
+.partido {
+    border-left: 5px solid #39a9ff;
 }
 
-footer{
-text-align:center;
-padding:30px;
-color:#aaa;
+.ganado {
+    color: #48e08a;
+}
+
+.perdido {
+    color: #ff7373;
+}
+
+.numero {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.tabla th {
+    background: #06182d;
+    padding: 8px;
+}
+
+.tabla td {
+    padding: 8px 4px;
+    border-bottom: 1px solid #315273;
+    text-align: center;
+}
+
+.pachuca {
+    background: #1767a5;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #aaa;
 }
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -99,32 +137,39 @@ color:#aaa;
 
 <div class="menu">
 
-<button onclick="abrir('inicio')">
+<button onclick="mostrar('inicio')">
 🏠 Inicio
 </button>
 
-<button onclick="abrir('jugadores')">
+<button onclick="mostrar('jugadores')">
 👥 Jugadores
 </button>
 
-<button onclick="abrir('partidos')">
+<button onclick="mostrar('partidos')">
 📅 Partidos
 </button>
 
-<button onclick="abrir('datos')">
-📊 Datos
+<button onclick="mostrar('tabla')">
+📊 Tabla
 </button>
 
-<button onclick="abrir('titulos')">
+<button onclick="mostrar('historia')">
+📖 Historia
+</button>
+
+<button onclick="mostrar('titulos')">
 🏆 Títulos
 </button>
 
 </div>
 
 
+<!-- INICIO -->
+
 <section id="inicio" class="seccion activa">
 
 <h2>🏠 Pachuca FC</h2>
+
 
 <div class="card">
 
@@ -134,34 +179,95 @@ color:#aaa;
 Bienvenido a la página de los Tuzos.
 </p>
 
-<p>📍 Pachuca, Hidalgo</p>
+<p>
+📍 Pachuca, Hidalgo, México
+</p>
 
-<p>🏟️ Estadio Hidalgo</p>
+<p>
+🏟️ Estadio Hidalgo
+</p>
 
-<p>🇲🇽 Liga MX</p>
+<p>
+🇲🇽 Liga MX
+</p>
 
 </div>
+
 
 <div class="card">
 
 <h3>🔥 Último partido</h3>
 
-<p>Pachuca 1 - 2 Querétaro</p>
+<h2>
+Pachuca 2 - 3 Puebla
+</h2>
 
-<p>⚽ Gol: Salomón Rondón</p>
+<p>
+📅 Jornada 4 · Apertura 2026
+</p>
+
+<p class="perdido">
+❌ Derrota
+</p>
+
+<p>
+🏟️ Estadio Hidalgo
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>📊 Pachuca en el torneo</h3>
+
+<p>
+Partidos: <strong>4</strong>
+</p>
+
+<p>
+Victorias: <strong>1</strong>
+</p>
+
+<p>
+Empates: <strong>0</strong>
+</p>
+
+<p>
+Derrotas: <strong>3</strong>
+</p>
+
+<p>
+Goles a favor: <strong>6</strong>
+</p>
+
+<p>
+Goles en contra: <strong>6</strong>
+</p>
+
+<p>
+Puntos: <strong>3</strong>
+</p>
 
 </div>
 
 </section>
 
 
+<!-- JUGADORES -->
+
 <section id="jugadores" class="seccion">
 
 <h2>👥 Jugadores</h2>
 
+<p>
+Jugadores utilizados en jornadas recientes.
+</p>
+
+
 <div class="card">
 
-<h3>🧤 Portero</h3>
+<h3>🧤 Porteros</h3>
 
 <div class="jugador">
 #25 Carlos Moreno
@@ -233,105 +339,467 @@ Bienvenido a la página de los Tuzos.
 </section>
 
 
+<!-- PARTIDOS -->
+
 <section id="partidos" class="seccion">
 
 <h2>📅 Partidos</h2>
 
-<div class="card">
 
-<h3>Pachuca 1 - 2 Querétaro</h3>
+<div class="card partido">
 
-<p>🇲🇽 Liga MX</p>
+<p>Jornada 1</p>
 
-<p>⚽ Salomón Rondón</p>
+<h3>UNAM 0 - 3 PACHUCA</h3>
+
+<p class="ganado">
+✅ Victoria
+</p>
 
 </div>
 
+
+<div class="card partido">
+
+<p>Jornada 2</p>
+
+<h3>PACHUCA 1 - 2 QUERÉTARO</h3>
+
+<p class="perdido">
+❌ Derrota
+</p>
+
+</div>
+
+
+<div class="card partido">
+
+<p>Jornada 3</p>
+
+<h3>LEÓN 1 - 0 PACHUCA</h3>
+
+<p class="perdido">
+❌ Derrota
+</p>
+
+</div>
+
+
+<div class="card partido">
+
+<p>Jornada 4</p>
+
+<h3>PACHUCA 2 - 3 PUEBLA</h3>
+
+<p class="perdido">
+❌ Derrota
+</p>
+
+</div>
+
+
 <div class="card">
 
-<h3>Próximos partidos</h3>
+<h3>📌 Próximo partido</h3>
 
-<p>📅 Aquí puedes agregar los siguientes partidos.</p>
+<p>
+Aquí puedes agregar el siguiente partido
+cuando esté confirmado.
+</p>
 
 </div>
 
 </section>
 
 
-<section id="datos" class="seccion">
+<!-- TABLA -->
 
-<h2>📊 Datos</h2>
+<section id="tabla" class="seccion">
 
-<div class="card">
+<h2>📊 Tabla de posiciones</h2>
 
-<h3>⚽ Estadísticas</h3>
+<p>
+Liga MX · Apertura 2026 · Jornada 4
+</p>
 
-<p>Partidos: 2</p>
-
-<p>Victorias: 1</p>
-
-<p>Empates: 0</p>
-
-<p>Derrotas: 1</p>
-
-</div>
 
 <div class="card">
 
-<h3>🔥 Goleador</h3>
+<table class="tabla">
 
-<p class="numero">Salomón Rondón</p>
+<tr>
 
-<p>⚽ 1 gol</p>
+<th>#</th>
+<th>Equipo</th>
+<th>J</th>
+<th>G</th>
+<th>E</th>
+<th>P</th>
+<th>DIF</th>
+<th>PTS</th>
 
-</div>
+</tr>
 
-<div class="card">
 
-<h3>🌎 Competiciones</h3>
+<tr>
+<td>1</td>
+<td>América</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>+7</td>
+<td>10</td>
+</tr>
 
-<p>🇲🇽 Liga MX</p>
 
-<p>🌎 Concacaf</p>
+<tr>
+<td>2</td>
+<td>Tijuana</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>+4</td>
+<td>10</td>
+</tr>
 
-<p>🇺🇸 Leagues Cup</p>
+
+<tr>
+<td>3</td>
+<td>Monterrey</td>
+<td>4</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>+7</td>
+<td>9</td>
+</tr>
+
+
+<tr>
+<td>4</td>
+<td>Atlas</td>
+<td>4</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>+1</td>
+<td>9</td>
+</tr>
+
+
+<tr>
+<td>5</td>
+<td>Toluca</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>+3</td>
+<td>7</td>
+</tr>
+
+
+<tr>
+<td>6</td>
+<td>Pumas</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>+2</td>
+<td>7</td>
+</tr>
+
+
+<tr>
+<td>7</td>
+<td>Puebla</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>+1</td>
+<td>7</td>
+</tr>
+
+
+<tr>
+<td>8</td>
+<td>Querétaro</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>+1</td>
+<td>7</td>
+</tr>
+
+
+<tr>
+<td>9</td>
+<td>Guadalajara</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>7</td>
+</tr>
+
+
+<tr>
+<td>10</td>
+<td>Cruz Azul</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>6</td>
+</tr>
+
+
+<tr>
+<td>11</td>
+<td>León</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>6</td>
+</tr>
+
+
+<tr>
+<td>12</td>
+<td>Necaxa</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>-1</td>
+<td>6</td>
+</tr>
+
+
+<tr>
+<td>13</td>
+<td>Atlante</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>5</td>
+</tr>
+
+
+<tr class="pachuca">
+<td>14</td>
+<td>🔵 Pachuca</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+</tr>
+
+
+<tr>
+<td>15</td>
+<td>Atl. San Luis</td>
+<td>4</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>-4</td>
+<td>2</td>
+</tr>
+
+
+<tr>
+<td>16</td>
+<td>Tigres</td>
+<td>4</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>-4</td>
+<td>1</td>
+</tr>
+
+
+<tr>
+<td>17</td>
+<td>Santos</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>-6</td>
+<td>0</td>
+</tr>
+
+
+<tr>
+<td>18</td>
+<td>Juárez</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>-11</td>
+<td>0</td>
+</tr>
+
+</table>
 
 </div>
 
 </section>
 
+
+<!-- HISTORIA -->
+
+<section id="historia" class="seccion">
+
+<h2>📖 Historia del Pachuca</h2>
+
+
+<div class="card">
+
+<h3>📅 1892</h3>
+
+<p>
+El Pachuca Football Club fue fundado
+el 1 de noviembre de 1892.
+</p>
+
+<p>
+Es considerado el club más antiguo
+del fútbol mexicano.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🏟️ Estadio Hidalgo</h3>
+
+<p>
+El Pachuca disputa sus partidos como
+local en el Estadio Hidalgo.
+</p>
+
+<p>
+El estadio fue inaugurado en 1993.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌎 Copa Sudamericana 2006</h3>
+
+<p>
+Pachuca ganó la Copa Sudamericana
+en 2006.
+</p>
+
+<p>
+Fue un título histórico para el fútbol
+mexicano.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🏆 Concacaf</h3>
+
+<p>
+Pachuca conquistó su sexta Copa de
+Campeones de la Concacaf en 2024.
+</p>
+
+<p>
+Derrotó 3-0 al Columbus Crew
+en la final.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌎 Mundial de Clubes</h3>
+
+<p>
+Pachuca ha participado en diferentes
+ediciones del Mundial de Clubes.
+</p>
+
+<p>
+Su mejor actuación histórica en el
+torneo fue el tercer lugar de 2017.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- TITULOS -->
 
 <section id="titulos" class="seccion">
 
 <h2>🏆 Títulos</h2>
 
+
 <div class="card">
 
 <h3>🇲🇽 México</h3>
 
-<p>🏆 Liga MX</p>
-
-<p>🏆 Copa MX</p>
-
-<p>🏆 Campeón de Campeones</p>
-
-</div>
-
-<div class="card">
-
-<h3>🌎 Internacional</h3>
-
-<p>🏆 Concacaf Champions Cup</p>
-
-</div>
-
-<div class="card">
-
-<h3>📖 Historia</h3>
+<p>
+🏆 7 títulos de Liga MX
+</p>
 
 <p>
-Pachuca es uno de los clubes históricos
-del fútbol mexicano.
+🏆 Copa MX
+</p>
+
+<p>
+🏆 Campeón de Campeones
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌎 Internacionales</h3>
+
+<p>
+🏆 6 Copas de Campeones de Concacaf
+</p>
+
+<p>
+🏆 Copa Sudamericana 2006
+</p>
+
+<p>
+🏆 Derbi de las Américas
+</p>
+
+<p>
+🏆 Copa Challenger
 </p>
 
 </div>
@@ -345,32 +813,32 @@ del fútbol mexicano.
 
 <br><br>
 
-Página hecha por un aficionado
+Página de aficionado
 
 </footer>
 
 
 <script>
 
-function abrir(nombre){
+function mostrar(nombre) {
 
-let secciones =
-document.querySelectorAll(".seccion");
+    var secciones =
+    document.getElementsByClassName("seccion");
 
-secciones.forEach(function(seccion){
+    for (var i = 0; i < secciones.length; i++) {
 
-seccion.classList.remove("activa");
+        secciones[i].style.display = "none";
 
-});
+    }
 
-document.getElementById(nombre)
-.classList.add("activa");
+    document.getElementById(nombre).style.display = "block";
 
-window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
 }
 
 </script>
+
 
 </body>
 
